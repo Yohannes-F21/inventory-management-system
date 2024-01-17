@@ -44,21 +44,20 @@ const DisplaySuppliers = () => {
       dataIndex: "edit",
       key: "edit",
       render: (_text: string, record: Suppliers) => (
-        <div className="space-x-4 w-full flex">
+        <div className='space-x-4 w-full flex'>
           <Button
             icon={<EditOutlined />}
-            shape="circle"
-            className="bg-blue-500 text-white border hover:border-none  border-none "
-            type="primary"
-            onClick={() => handleEditModal(record)}
-          ></Button>
+            shape='circle'
+            className='bg-blue-500 text-white border hover:border-none  border-none '
+            type='primary'
+            onClick={() => handleEditModal(record)}></Button>
 
           <Button
             icon={<DeleteOutlined />}
-            shape="circle"
-            className="bg-red-500 text-white border hover:border-none border-none "
-            onClick={() => showDeleteConfirm(record)}
-          ></Button>
+            shape='circle'
+            className='bg-red-500 text-white border hover:border-none border-none '
+            // onClick={() => showDeleteConfirm(record)}
+            disabled></Button>
         </div>
       ),
     },
@@ -157,17 +156,17 @@ const DisplaySuppliers = () => {
   const [editItem, setEditItem] = useState([]);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const queryClient = useQueryClient();
-  const deleteCategory = async (selectedItem: string) => {
-    const response = await http.post(`/catagory/delete`, { id: selectedItem });
-    // console.log(selectedItem);
+  // const deleteCategory = async (selectedItem: string) => {
+  //   const response = await http.post(`/catagory/delete`, { id: selectedItem });
+  //   // console.log(selectedItem);
 
-    return response.data;
-  };
-  const deleteCategoryMutation = useMutation(deleteCategory, {
-    onSuccess: () => {
-      queryClient.invalidateQueries("catagory");
-    },
-  });
+  //   return response.data;
+  // };
+  // // const deleteCategoryMutation = useMutation(deleteCategory, {
+  //   onSuccess: () => {
+  //     queryClient.invalidateQueries("catagory");
+  //   },
+  // });
 
   const showDeleteConfirm = (record: any) => {
     confirm({
@@ -176,7 +175,7 @@ const DisplaySuppliers = () => {
       content: "This action cannot be undone!",
       okType: "danger",
       onOk() {
-        deleteCategoryMutation.mutate(record.key);
+        // deleteCategoryMutation.mutate(record.key);
       },
     });
   };
@@ -219,28 +218,27 @@ const DisplaySuppliers = () => {
 
   return (
     <>
-      <div className="w-4/5 mx-auto mt-10">
-        <h1 className="text-2xl text-center mb-6">Category List</h1>
+      <div className='w-4/5 mx-auto mt-10'>
+        <h1 className='text-2xl text-center mb-6'>Category List</h1>
         <div>
-          <div className="flex justify-between mb-2">
+          <div className='flex justify-between mb-2'>
             <Button
-              className="bg-blue-500 text-white"
-              type="primary"
-              onClick={handleAddModal}
-            >
+              className='bg-blue-500 text-white'
+              type='primary'
+              onClick={handleAddModal}>
               Add New Category
             </Button>
 
-            <div className="flex gap-2">
+            <div className='flex gap-2'>
               <Input
-                placeholder="Search Name"
+                placeholder='Search Name'
                 onChange={(e) =>
                   handleFilterChange(e.target.value, "catagoryName")
                 }
                 suffix={<SearchOutlined />}
               />
               <Input
-                placeholder="Search ID"
+                placeholder='Search ID'
                 onChange={(e) => handleFilterChange(e.target.value, "id")}
                 suffix={<SearchOutlined />}
               />
@@ -248,19 +246,17 @@ const DisplaySuppliers = () => {
           </div>
         </div>
         <Table
-          className="rounded-lg"
+          className='rounded-lg'
           dataSource={dataSourceDB}
           columns={columns}
           loading={isLoading}
           pagination={{ position: ["bottomCenter"] }}
-          size="small"
-        ></Table>
+          size='small'></Table>
 
         <Modal
-          title="Category Registration"
+          title='Category Registration'
           open={isAddModalOpen}
-          onCancel={setIsAddModalOpen.bind(this, false)}
-        >
+          onCancel={setIsAddModalOpen.bind(this, false)}>
           <AddCategory record={editItem}></AddCategory>
         </Modal>
       </div>

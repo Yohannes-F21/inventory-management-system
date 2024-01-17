@@ -174,20 +174,20 @@ const getAllCatagories = async (req, res) => {
   }
 };
 
-const deleteCatagory = async (req, res) => {
-  try {
-    const { id } = req.body;
+// const deleteCatagory = async (req, res) => {
+//   try {
+//     const { id } = req.body;
 
-    // console.log(id);
-    const catagory = await Catagory.findByIdAndDelete(id);
-    if (!catagory) {
-      return res.status(404).json({ message: "catagory not found" });
-    }
-    res.json({ message: "catagory deleted" });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
+//     // console.log(id);
+//     const catagory = await Catagory.findByIdAndDelete(id);
+//     if (!catagory) {
+//       return res.status(404).json({ message: "catagory not found" });
+//     }
+//     res.json({ message: "catagory deleted" });
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// };
 
 const getCatagoryById = async (req, res) => {
   try {
@@ -208,6 +208,6 @@ module.exports = {
   createCatagory,
   getCatagoryById,
   getAllCatagories,
-  deleteCatagory,
+  // deleteCatagory,
   updateCatagory,
 };
