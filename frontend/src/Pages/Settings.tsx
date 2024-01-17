@@ -1,44 +1,24 @@
 import { Link } from 'react-router-dom';
+import { Button,Input,Avatar  } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
 
 const Settings = () => {
 
     return (
 
-        <div className="rounded-3xl bg-white w-full  lg:w-1/3 lg:m-auto p-16" >
+        <div className="rounded-3xl bg-white w-full  lg:w-1/3 lg:m-auto p-12" >
           <h1 className="text-3xl font-semibold text-center my-7 text-primary">Profile</h1>
+          <div className='flex justify-center align-center'>
+          <Avatar size={64} icon={<UserOutlined />} className='mb-8 text-c'/>
+
+          </div>
           <form className="flex flex-col gap-4">
     
-            <input
-              type="text"
-              placeholder="username"
-             
-              id="username"
-              className="border p-3 rounded-lg"
-             
-            />
-            <input
-              type="email"
-              placeholder="email"
-              id="email"
-             
-              className="border p-3 rounded-lg"
-             
-            />
-            <input
-              type="password"
-              placeholder="password"
-            
-              id="password"
-              className="border p-3 rounded-lg"
-            />
+          <Input placeholder="Name" />
+          <Input placeholder="Email" />
+          <Input placeholder="Password" />
           
-            <Link
-             to='/dashboard'
-              className="transition-colors duration-300 border border-primary opacity-75 text-primary rounded-lg p-3 uppercase hover:bg-primary hover:text-white disabled:opacity-80 text-center"
-            >
-             Update
-            </Link>
-     
+          <Button>Update</Button>
           </form>
           <div className="flex justify-between mt-5">
             <span

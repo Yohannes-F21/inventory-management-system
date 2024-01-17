@@ -12,7 +12,8 @@ function App() {
           <SideMenu></SideMenu>
           <PageContent></PageContent>
         </div>
-      </div>
+        
+           </div>
     </>
   );
 }
