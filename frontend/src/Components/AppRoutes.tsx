@@ -12,6 +12,7 @@ import DisplaySuppliers from "../Pages/DisplaySuppliers";
 import AddOrder from "../Pages/AddOrder";
 import DisplayOrders from "../Pages/DisplayOrders";
 import DisplayCategory from "../Pages/DisplayCategory";
+import Settings from "../Pages/Settings";
 
 function AppRoutes() {
   return (
@@ -33,6 +34,7 @@ function AppRoutes() {
       <Route path="/loans" element={<Addorder />}></Route>
       <Route path="/customers" element={<EmployeeDisplay />}></Route>
       <Route path="/categorys" element={<DisplayCategory />}></Route>
+      <Route path="/settings" element={<Settings />}></Route>
     </Routes>
   );
 }
