@@ -58,7 +58,8 @@ const DisplaySuppliers = () => {
             shape="circle"
             className="bg-blue-500 text-white border hover:border-none  border-none "
             type="primary"
-            onClick={() => handleUpdate(record)}
+            disabled
+            // onClick={() => handleUpdate(record)}
           ></Button>
 
           <Button
