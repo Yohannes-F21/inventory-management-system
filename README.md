@@ -1,4 +1,4 @@
-# Inventory Management System
+# [Inventory Management System](https://github.com/Yohannes-F21/inventory-management-system/)
 
 ## Team Members - Section D
 - [Yohannes Teshome - ETS0702/12](https://github.com/johannesteshome)
