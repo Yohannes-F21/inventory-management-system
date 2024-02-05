@@ -3,7 +3,6 @@ import { Drawer, Form, Input, Button } from "antd";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import banner from "../img/banner.png";
-import ticktime from "../img/ticktime-banner.png";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { UserLogin, UserForgetPassword } from "../Redux/features/authActions";
