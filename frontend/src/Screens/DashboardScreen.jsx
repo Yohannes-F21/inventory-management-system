@@ -3,7 +3,6 @@ import { Icon } from "@iconify/react";
 import { Avatar, Layout, Menu, theme } from "antd";
 import { Outlet, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import ticktime from '../img/ticktime-banner.png'
 import {
   authLogout
 } from "../Redux/features/authActions";
@@ -172,11 +171,6 @@ const DashboardScreen = () => {
         onCollapse={(value) => setCollapsed(value)}
         theme='light'>
         <div className='demo-logo-vertical p-4' >
-          <img
-          src={ticktime}
-          alt='Ticktime'
-          className=''
-          />
         </div>
         <Menu
           theme='light'
