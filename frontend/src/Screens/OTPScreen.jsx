@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Form, Input, Button } from "antd";
-import ticktime from '../img/ticktime-banner.png'
 import { ToastContainer, toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import {
@@ -54,7 +53,6 @@ const OTPScreen = () => {
     return (
         <div className="flex flex-col items-center justify-center w-full h-screen gap-4">
             <ToastContainer/>
-          <img src={ticktime} alt="TickTime Logo" className="w-[20%]" />
       <Form
         className='flex flex-col items-center justify-center w-full'
         layout='vertical'
