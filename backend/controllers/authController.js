@@ -51,7 +51,7 @@ const sendOTP = async (req, res) => {
 }
 
 // Function to exchange authorization code for an access token
-async function exchangeCodeForToken(code: string): Promise<any> {
+async function exchangeCodeForToken(code) {
   const tokenEndpoint = 'https://accounts.google.com/o/oauth2/token';
 
   const response = await fetch(tokenEndpoint, {
@@ -137,4 +137,5 @@ const login = async (req, res) => {
 module.exports = {
     sendOTP,
     login,
+    exchangeCodeForToken
 }
