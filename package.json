@@ -9,6 +9,7 @@
     "rc-picker": "^3.14.2",
     "react-chartjs-2": "^5.2.0",
     "react-query": "^3.39.3",
-    "recharts": "^2.9.0"
+    "recharts": "^2.9.0",
+    "react-google-login": "5.2.2"
   }
 }
