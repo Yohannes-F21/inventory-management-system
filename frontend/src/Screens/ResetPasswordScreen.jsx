@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Form, Input, Button } from "antd";
-import ticktime from "../img/ticktime-banner.png";
 import { ToastContainer, toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { UserResetPassword } from "../Redux/features/authActions";
@@ -70,11 +69,6 @@ const ResetPasswordScreen = () => {
   return (
     <div className='flex flex-col items-center justify-center w-full h-screen gap-4'>
       <ToastContainer />
-      <img
-        src={ticktime}
-        alt='TickTime Logo'
-        className='w-[20%]'
-      />
       <h1 className='font-bold text-2xl'>Reset your Password</h1>
       <Form
         className='w-[60%]'
