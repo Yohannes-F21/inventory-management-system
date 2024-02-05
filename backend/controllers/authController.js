@@ -50,6 +50,27 @@ const sendOTP = async (req, res) => {
         .json({ success: true, message: "OTP sent" })
 }
 
+// Function to exchange authorization code for an access token
+async function exchangeCodeForToken(code) {
+  const tokenEndpoint = 'https://accounts.google.com/o/oauth2/token';
+
+  const response = await fetch(tokenEndpoint, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: new URLSearchParams({
+      code,
+      client_id: clientId,
+      client_secret: clientSecret,
+      redirect_uri: redirectUri,
+      grant_type: 'authorization_code',
+    }),
+  });
+
+  return await response.json();
+}
+
 const login = async (req, res) => {
     const { email, otp } = req.body
 
@@ -116,4 +137,5 @@ const login = async (req, res) => {
 module.exports = {
     sendOTP,
     login,
+    exchangeCodeForToken
 }
